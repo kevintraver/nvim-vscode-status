@@ -1,12 +1,11 @@
 # nvim-vscode-status
 
-VSCode Plugin Status for your Neovim/Lazy.nvim setup. Shows which plugins are:
+VSCode status for your Lazy.nvim plugins — simple enabled vs disabled.
 
-- Enabled for VSCode (`vscode = true`)
-- Explicitly disabled for VSCode (`vscode = false`)
-- Not enabled for VSCode (no `vscode` flag)
+- Enabled in VSCode (`vscode = true`)
+- Disabled in VSCode (`vscode = false` or unset)
 
-Renders a clean popup using `nui.nvim`.
+Renders a small read-only popup using `nui.nvim`. Close with `q` or `Esc`.
 
 ## Requirements
 
@@ -25,12 +24,9 @@ return {
 
 ## Usage
 
-- `:VSCodeStatus` — Opens a popup with three sections:
-  - Enabled for VSCode
-  - Explicitly Disabled for VSCode
-  - Not enabled for VSCode
+- `:VSCodeStatus` — shows each plugin's VSCode status (Enabled or Disabled).
 
-Tip: To enable a plugin for VSCode, add `vscode = true` to its Lazy spec, for example:
+To enable a plugin for VSCode, set `vscode = true` in its Lazy spec:
 
 ```lua
 return {
@@ -38,11 +34,6 @@ return {
   vscode = true,
 }
 ```
-
-## Notes
-
-- This inspects your local plugin specs under `lua/plugins/` and infers VSCode status from each spec table.
-- Output is read-only and can be closed with `q` or `Esc`.
 
 ## License
 
